@@ -1,7 +1,7 @@
 # showip
 
 O inicio da minha aprendizagem de `Network Programing`.
-O objetivo é visualizar que tipo Protocolo que certo site utiliza. (IPv4 || IPv6)
+O objetivo é visualizar que tipo Protocolo certo site utiliza. (IPv4 || IPv6)
 Sendo que grande parte da internet utiliza IPv4.
 Este programa utiliza a sys call `getaddrinfo()`.
 Mais info:
