@@ -14,6 +14,7 @@ int main(int argc, char const **argv) {
 
     struct addrinfo hints, *res, *p;
     int status;
+    char ipstr[INET6_ADDRSTRLEN];
 
     memset(&hints, 0, sizeof(hints));
     hints.ai_family = AF_UNSPEC;
@@ -34,13 +35,11 @@ int main(int argc, char const **argv) {
             struct sockaddr_in *ipv4 = (struct sockaddr_in *)p->ai_addr;
             addr = &(ipv4->sin_addr);
             ipver = "IPv4";
-            char ipstr[INET_ADDRSTRLEN];
         }
         else {
             struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *)p->ai_addr;
             addr = &(ipv6->sin6_addr);
             ipver = "IPv6";
-            char ipstr[INET6_ADDRSTRLEN];
         }
 
         if (inet_ntop(p->ai_family, addr, ipstr, sizeof(ipstr)) == NULL) {
